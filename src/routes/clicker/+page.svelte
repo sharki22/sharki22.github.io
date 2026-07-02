@@ -4,5 +4,6 @@
 
 <main>
 	<Nav />
-	<p>Projects</p>
+
+	<button type="button">click me</button>
 </main>
