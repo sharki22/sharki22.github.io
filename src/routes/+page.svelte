@@ -15,7 +15,6 @@
 			<li>Super <strong>lazy</strong>, like crazy lazy</li>
 			<li>20 Years old <strong>unc</strong></li>
 			<li>Sometimes can be <strong>rude</strong></li>
-			<li>Native Russian</li>
 		</ul>
 
 		<p>
