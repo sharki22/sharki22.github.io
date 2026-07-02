@@ -1,17 +1,15 @@
-name:    wompus
+name: wompus
 
 on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
 
-# Разрешаем действия для GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Запрещаем параллельные деплои
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -34,10 +32,13 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Check output folder
+        run: ls -la
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'  
+          path: './dist'
 
   deploy:
     needs: build
@@ -46,6 +47,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name:    wompus
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
