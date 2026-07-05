@@ -25,4 +25,4 @@ npm run preview
 
 ## Деплой
 
-При пуше в `main` GitHub Actions автоматически собирает проект и деплоит на GitHub Pages.
+При пуше в **`main`** GitHub Actions автоматически собирает проект и деплоит на GitHub Pages.
