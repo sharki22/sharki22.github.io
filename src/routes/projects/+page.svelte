@@ -6,13 +6,16 @@
 	let activeFilter = $state<string | null>(null);
 
 	let filtered = $derived(
-		activeFilter ? projects.filter((p) => p.tags.includes(activeFilter)) : projects
+		activeFilter ? projects.filter((p) => p.tags.includes(activeFilter!)) : projects
 	);
 </script>
 
 <svelte:head>
 	<title>Projects — Sharki22</title>
-	<meta name="description" content="Projects by Sharki22 — a collection of software, tools, and experiments." />
+	<meta
+		name="description"
+		content="Projects by Sharki22 — a collection of software, tools, and experiments."
+	/>
 </svelte:head>
 
 <div class="page">
@@ -29,7 +32,7 @@
 		>
 			All
 		</button>
-		{#each allTags as tag}
+		{#each allTags as tag (tag)}
 			<button
 				class="filter-btn"
 				class:filter-btn--active={activeFilter === tag}

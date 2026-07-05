@@ -1,17 +1,15 @@
-import { ICONS_BASE } from './paths'
+import { ICONS_BASE } from './paths';
 
 export interface SkillItem {
-	name: string
-	icon: string
+	name: string;
+	icon: string;
 }
 
 export interface SkillCategory {
-	name: string
-	icon: string
-	items: SkillItem[]
+	name: string;
+	icon: string;
+	items: SkillItem[];
 }
-
-export const ICONS_BASE = '/icons'
 
 export const skillIconMap: Record<string, string> = {
 	Git: `${ICONS_BASE}/git.svg`,
@@ -41,45 +39,45 @@ export const skillIconMap: Record<string, string> = {
 	Node: `${ICONS_BASE}/nodejs.svg`,
 	SFML: `${ICONS_BASE}/sfml.svg`,
 	SDL3: `${ICONS_BASE}/sdl3.svg`,
-	raylib: `${ICONS_BASE}/raylib.png`,
-}
+	raylib: `${ICONS_BASE}/raylib.png`
+};
 
 function sk(name: string): SkillItem {
-	return { name, icon: skillIconMap[name] || '' }
+	return { name, icon: skillIconMap[name] || '' };
 }
 
 export const skillCategories: SkillCategory[] = [
 	{
 		name: 'Languages',
 		icon: '💻',
-		items: ['Rust', 'C/C++', 'Python', 'C#', 'JavaScript', 'TypeScript'].map(sk),
+		items: ['Rust', 'C/C++', 'Python', 'C#', 'JavaScript', 'TypeScript'].map(sk)
 	},
 	{
 		name: 'Frameworks',
 		icon: '🧩',
-		items: ['Qt', 'Svelte', 'Vue', 'ASP.NET', '.NET'].map(sk),
+		items: ['Qt', 'Svelte', 'Vue', 'ASP.NET', '.NET'].map(sk)
 	},
 	{
 		name: 'Tools',
 		icon: '🛠️',
-		items: ['Git', 'Linux', 'CMake', 'Docker', 'Node'].map(sk),
+		items: ['Git', 'Linux', 'CMake', 'Docker', 'Node'].map(sk)
 	},
 	{
 		name: 'Databases',
 		icon: '🗄️',
-		items: ['MySQL', 'PostgreSQL', 'SQLite'].map(sk),
+		items: ['MySQL', 'PostgreSQL', 'SQLite'].map(sk)
 	},
 	{
 		name: 'Hardware',
 		icon: '🔌',
-		items: ['Arduino'].map(sk),
+		items: ['Arduino'].map(sk)
 	},
 	{
 		name: 'Libraries',
 		icon: '📚',
-		items: ['PyTorch', 'SFML', 'SDL3', 'raylib'].map(sk),
-	},
-]
+		items: ['PyTorch', 'SFML', 'SDL3', 'raylib'].map(sk)
+	}
+];
 
 export const allSkills: SkillItem[] = [
 	sk('Rust'),
@@ -91,5 +89,5 @@ export const allSkills: SkillItem[] = [
 	sk('Linux'),
 	sk('Docker'),
 	sk('PostgreSQL'),
-	sk('Arduino'),
-]
+	sk('Arduino')
+];

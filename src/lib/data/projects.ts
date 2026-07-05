@@ -1,11 +1,11 @@
 export interface Project {
-	title: string
-	description: string
-	tags: string[]
-	href: string
-	icon: string
-	stars?: number
-	lang?: string
+	title: string;
+	description: string;
+	tags: string[];
+	href: string;
+	icon: string;
+	stars?: number;
+	lang?: string;
 }
 
 export const projects: Project[] = [
@@ -16,7 +16,7 @@ export const projects: Project[] = [
 		tags: ['C++', 'CMake', 'FTXUI', 'TUI'],
 		href: 'https://github.com/sharki22/refetch',
 		icon: '⚡',
-		lang: 'C++',
+		lang: 'C++'
 	},
 	{
 		title: 'Huffman Archiver',
@@ -25,7 +25,7 @@ export const projects: Project[] = [
 		tags: ['C++', 'Qt', 'Algorithms', 'GUI'],
 		href: '#',
 		icon: '🗜️',
-		lang: 'C++',
+		lang: 'C++'
 	},
 	{
 		title: 'Lexical Analyzer',
@@ -34,7 +34,7 @@ export const projects: Project[] = [
 		tags: ['C++', 'Qt', 'Automata', 'Compiler'],
 		href: '#',
 		icon: '📝',
-		lang: 'C++',
+		lang: 'C++'
 	},
 	{
 		title: 'sharki22.github.io',
@@ -43,7 +43,7 @@ export const projects: Project[] = [
 		tags: ['Svelte', 'TypeScript', 'Vite', 'CSS'],
 		href: 'https://github.com/sharki22/sharki22.github.io',
 		icon: '🌐',
-		lang: 'Svelte',
+		lang: 'Svelte'
 	},
 	{
 		title: 'nerdi',
@@ -52,7 +52,7 @@ export const projects: Project[] = [
 		tags: ['Rust', 'TUI', 'Editor'],
 		href: '#',
 		icon: '✏️',
-		lang: 'Rust',
+		lang: 'Rust'
 	},
 	{
 		title: 'Odysseus',
@@ -61,6 +61,6 @@ export const projects: Project[] = [
 		tags: ['C#', '.NET', 'CLI', 'GUI'],
 		href: '#',
 		icon: '🔐',
-		lang: 'C#',
-	},
-]
+		lang: 'C#'
+	}
+];

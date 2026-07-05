@@ -9,7 +9,7 @@
 			title: 'University (3rd Course)',
 			subtitle: 'Computer Science',
 			description:
-				'Pursuing a degree in Computer Science. Exploring compilers, algorithms, low-level programming, and software design.'
+				'Pursuing a degree in Computer Science. Exploring MLs, AI, algorithms, low-level programming, and software design.'
 		},
 		{
 			year: '2024',
@@ -43,7 +43,7 @@
 		</div>
 		<div class="about-info">
 			<h1 class="about-name">Sharki22 <span class="about-alias">(aka Kyrie)</span></h1>
-			<p class="about-tagline">CS Student &middot; C++ Dev &middot; Professional Procrastinator</p>
+			<p class="about-tagline">CS Student &middot; Dev &middot; Professional Procrastinator</p>
 			<p class="about-bio">
 				Hey there! I'm a 20-year-old computer science student who codes for fun, drinks way too much
 				coffee, and occasionally builds something useful. I like tinkering with UIs, writing small
@@ -69,7 +69,7 @@
 			<span class="gradient-text">Skills Breakdown</span>
 		</h2>
 		<div class="skills-grid">
-			{#each skillCategories as cat}
+			{#each skillCategories as cat (cat.name)}
 				<div class="skill-card">
 					<div class="skill-card-header">
 						<span class="skill-card-icon">{cat.icon}</span>
@@ -82,7 +82,7 @@
 						></div>
 					</div>
 					<div class="skill-card-items">
-						{#each cat.items as item}
+						{#each cat.items as item (item.name)}
 							<span class="skill-tag">
 								{#if item.icon}
 									<img src={item.icon} alt={item.name} class="skill-tag-icon" />

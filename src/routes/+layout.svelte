@@ -6,7 +6,6 @@
 
 	let { children } = $props();
 
-	const title = $derived('Sharki22');
 	const description =
 		'Personal portfolio of Sharki22 — a university student, Rust enthusiast, and open-source hobbyist.';
 	const url = 'https://sharki22.github.io';
@@ -34,7 +33,10 @@
 
 {#if browser}
 	<script>
-		document.documentElement.style.setProperty('--scrollbar-width', (window.innerWidth - document.documentElement.clientWidth) + 'px');
+		document.documentElement.style.setProperty(
+			'--scrollbar-width',
+			window.innerWidth - document.documentElement.clientWidth + 'px'
+		);
 	</script>
 {/if}
 

@@ -1,16 +1,16 @@
 <script lang="ts">
 	interface TimelineItem {
-		year: string
-		title: string
-		subtitle: string
-		description: string
+		year: string;
+		title: string;
+		subtitle: string;
+		description: string;
 	}
 
 	let { items }: { items: TimelineItem[] } = $props();
 </script>
 
 <div class="timeline">
-	{#each items as item, i}
+	{#each items as item, i (item.title)}
 		<div class="timeline-item" style="animation-delay: {i * 100}ms">
 			<div class="timeline-dot"></div>
 			<div class="timeline-content">

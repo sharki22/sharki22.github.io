@@ -7,6 +7,7 @@
 	let langIcon = $derived(project.lang ? skillIconMap[project.lang] || '' : '');
 </script>
 
+<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 <a href={project.href} class="card" target="_blank" rel="noopener noreferrer">
 	<div class="card-icon">{project.icon}</div>
 	<div class="card-body">
@@ -14,7 +15,7 @@
 		<p class="card-desc">{project.description}</p>
 	</div>
 	<div class="card-tags">
-		{#each project.tags as tag}
+		{#each project.tags as tag (tag)}
 			<span class="card-tag">{tag}</span>
 		{/each}
 	</div>
@@ -22,8 +23,17 @@
 		<img src={langIcon} alt={project.lang} class="card-lang" />
 	{/if}
 	<div class="card-arrow">
-		<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-			<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+		<svg
+			width="16"
+			height="16"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		>
+			<line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
 		</svg>
 	</div>
 </a>
@@ -93,6 +103,7 @@
 		display: -webkit-box;
 		-webkit-line-clamp: 3;
 		-webkit-box-orient: vertical;
+		line-clamp: 3;
 		overflow: hidden;
 	}
 

@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { resolve } from '$app/paths';
 	import { ASSETS_BASE } from '$lib/data/paths';
 
 	const links = [
 		{ href: '/', label: 'Home', icon: '◈' },
 		{ href: '/projects', label: 'Projects', icon: '⊞' },
 		{ href: '/about', label: 'About', icon: '◉' },
-		{ href: '/clicker', label: 'Clicker', icon: '⚄' },
-	];
+		{ href: '/clicker', label: 'Clicker', icon: '⚄' }
+	] as const;
 
 	let mobileOpen = $state(false);
 
@@ -20,19 +21,26 @@
 
 <nav class="nav" class:nav--open={mobileOpen}>
 	<div class="nav-header">
-		<a href="/" class="nav-logo" aria-label="Home">
+		<a href={resolve('/')} class="nav-logo" aria-label="Home">
 			<img src="{ASSETS_BASE}/logo.png" alt="Sharki22" class="nav-logo-icon" />
 			<span class="nav-logo-text">sharki22</span>
 		</a>
 		<button class="nav-close" onclick={() => (mobileOpen = false)} aria-label="Close menu">
-			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+			<svg
+				width="20"
+				height="20"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"><path d="M18 6 6 18M6 6l12 12" /></svg
+			>
 		</button>
 	</div>
 
 	<div class="nav-links">
-		{#each links as link}
+		{#each links as link (link.href)}
 			<a
-				href={link.href}
+				href={resolve(link.href)}
 				class="nav-link"
 				class:nav-link--active={isActive(link.href)}
 				onclick={() => (mobileOpen = false)}
@@ -49,7 +57,9 @@
 </nav>
 
 <button class="menu-btn" onclick={() => (mobileOpen = true)} aria-label="Open menu">
-	<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+	<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+		><path d="M3 12h18M3 6h18M3 18h18" /></svg
+	>
 </button>
 
 {#if mobileOpen}
